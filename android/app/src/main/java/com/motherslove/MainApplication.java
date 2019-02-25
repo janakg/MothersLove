@@ -11,6 +11,11 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import com.brentvatne.react.ReactVideoPackage;
+import com.imagepicker.ImagePickerPackage;
+import com.motherslove.HelloWorldPackager;
+import com.motherslove.DehazePackage;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,7 +33,11 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),
             new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
-            new AppCenterReactNativePackage(MainApplication.this)
+            new AppCenterReactNativePackage(MainApplication.this),
+            new HelloWorldPackager(),
+            new DehazePackage(),
+            new ReactVideoPackage(),
+            new ImagePickerPackage()
       );
     }
 
