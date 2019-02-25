@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "rm -rf $TMPDIR/react-*; rm -rf $TMPDIR/haste-*; rm -rf $TMPDIR/metro-*; watchman watch-del-all && yarn rn:start",
+    "rn:start": "NODE_ENV=development node node_modules/react-native/local-cli/cli.js start -- --reset-cache",
     "test": "jest"
   },
   "dependencies": {

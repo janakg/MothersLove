@@ -20,7 +20,7 @@ public class HelloWorldModule extends ReactContextBaseJavaModule {
     private HelloWorld cppApi;
 
     static {
-        System.loadLibrary("helloworld");
+        System.loadLibrary("motherslove");
     }
 
 
