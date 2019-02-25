@@ -8,8 +8,10 @@ curl -L "https://s3.amazonaws.com/build.hellosivi.com/opencv.zip" --output "$APP
 echo "unzipping OpenCV"
 unzip "$APPCENTER_SOURCE_DIRECTORY/opencv.zip"
 echo "moving the JNI directory"
-mv "$APPCENTER_SOURCE_DIRECTORY/opencv" "$APPCENTER_SOURCE_DIRECTORY/deps/"
-ln -s "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/sdk/native/libs" "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
+mv "$APPCENTER_SOURCE_DIRECTORY/opencv/" "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/"
+ls "$APPCENTER_SOURCE_DIRECTORY/deps/opencv"
+# rm "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
+# ln -s "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/sdk/native/libs" "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
 
 
 echo "Post clone script. Done."
