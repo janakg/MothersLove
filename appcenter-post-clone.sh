@@ -4,6 +4,7 @@ echo "Running post clone script..."
 
 echo "Android setup..."
 echo "Downloading OpenCV"
+mkdir "$APPCENTER_SOURCE_DIRECTORY/deps"
 curl -L "https://s3.amazonaws.com/build.hellosivi.com/opencv.zip" --output "$APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip"
 echo "unzipping OpenCV"
 unzip "$APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip"
