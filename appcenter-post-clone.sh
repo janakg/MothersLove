@@ -8,8 +8,10 @@ curl -L https://s3.amazonaws.com/build.hellosivi.com/opencv.zip --output $APPCEN
 
 
 echo "unzipping OpenCV"
-unzip $APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip
+cd $APPCENTER_SOURCE_DIRECTORY/deps
+unzip ./opencv.zip
 
+cd $APPCENTER_SOURCE_DIRECTORY
 
 echo "Linking JNI directory"
 
