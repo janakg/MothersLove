@@ -13,14 +13,17 @@ unzip $APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip
 
 echo "Linking JNI directory"
 
-rm $APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLib
+rm $APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs
 ln -s $APPCENTER_SOURCE_DIRECTORY/deps/opencv/sdk/native/libs $APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs
 
 #Listing JNI
+echo "Listing android directory"
 cd $APPCENTER_SOURCE_DIRECTORY/android
 find . -maxdepth 3 -type d -ls
-cd $APPCENTER_SOURCE_DIRECTORY/deps
-find . -maxdepth 3 -type d -ls
+
+echo "Listing source directory"
+cd $APPCENTER_SOURCE_DIRECTORY
+find . -maxdepth 2 -type d -ls
 
 
 # cd 
