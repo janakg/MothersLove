@@ -42,6 +42,19 @@
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Allow MothersLove to access your calendar</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow MothersLove to use your camera</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow MothersLove to use your location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow MothersLove to access your microphone</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Give MothersLove permission to save photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Give MothersLove permission to access your photos</string>
+
 	<key>NSAppTransportSecurity</key>
 	<!--See http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/ -->
 	<dict>
