@@ -1,18 +1,30 @@
 #!/bin/sh
 
 echo "Running post clone script..."
-
-echo "Android setup..."
+ 
 echo "Downloading OpenCV"
-mkdir "$APPCENTER_SOURCE_DIRECTORY/deps"
-curl -L "https://s3.amazonaws.com/build.hellosivi.com/opencv.zip" --output "$APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip"
+mkdir $APPCENTER_SOURCE_DIRECTORY/deps
+curl -L https://s3.amazonaws.com/build.hellosivi.com/opencv.zip --output $APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip
+
+
 echo "unzipping OpenCV"
-unzip "$APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip"
-# echo "moving the JNI directory"
-# mv "$APPCENTER_SOURCE_DIRECTORY/opencv/" "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/"
-# ls "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/x86"
-rm "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
-ln -s "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/sdk/native/libs" "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
-ls "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
+unzip $APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip
+
+
+echo "Linking JNI directory"
+
+rm $APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLib
+ln -s $APPCENTER_SOURCE_DIRECTORY/deps/opencv/sdk/native/libs $APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs
+
+#Listing JNI
+cd $APPCENTER_SOURCE_DIRECTORY/android
+find . -maxdepth 3 -type d -ls
+cd $APPCENTER_SOURCE_DIRECTORY/deps
+find . -maxdepth 3 -type d -ls
+
+
+# cd 
+# ls $APPCENTER_SOURCE_DIRECTORY/android/app
+# ls $APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs
 
 echo "Post clone script. Done."
