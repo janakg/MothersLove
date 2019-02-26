@@ -34,7 +34,7 @@
 		9164AC8F222511FD00B38FC6 /* dehaze_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9164AC8B222511FD00B38FC6 /* dehaze_impl.cpp */; };
 		9164AC932225121700B38FC6 /* HelloWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = 9164AC922225121700B38FC6 /* HelloWorld.m */; };
 		9164AC962225129600B38FC6 /* Dehaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 9164AC942225129600B38FC6 /* Dehaze.m */; };
-		9164AC9A222513ED00B38FC6 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9164AC99222513ED00B38FC6 /* opencv2.framework */; };
+		9164ACC22225197F00B38FC6 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9164ACC12225197F00B38FC6 /* opencv2.framework */; };
 		91A7438394B5D4FB860781C5 /* libPods-MothersLoveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1820B0DF0AE529EB0D018EAF /* libPods-MothersLoveTests.a */; };
 		9637B3BCA9174E0E91D786F5 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0F5CB6FECC472992D20C7F /* libAppCenterReactNativeCrashes.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -387,8 +387,8 @@
 		9164AC952225129600B38FC6 /* Dehaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dehaze.h; sourceTree = "<group>"; };
 		9164AC972225136700B38FC6 /* hello_world.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = hello_world.hpp; path = "../generated-src/cpp/hello_world.hpp"; sourceTree = "<group>"; };
 		9164AC982225136700B38FC6 /* dehaze.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = dehaze.hpp; path = "../generated-src/cpp/dehaze.hpp"; sourceTree = "<group>"; };
-		9164AC99222513ED00B38FC6 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../deps/opencv2.framework; sourceTree = "<group>"; };
 		9164ACB0222515D600B38FC6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9164ACC12225197F00B38FC6 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../deps/ios/opencv2.framework; sourceTree = "<group>"; };
 		ABF1E20008C77A0DC6B57C23 /* Pods-MothersLoveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MothersLoveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MothersLoveTests/Pods-MothersLoveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		BC8B5BB996D3FA6EA6E530D4 /* Pods-MothersLove-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MothersLove-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MothersLove-tvOS/Pods-MothersLove-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -431,7 +431,7 @@
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
-				9164AC9A222513ED00B38FC6 /* opencv2.framework in Frameworks */,
+				9164ACC22225197F00B38FC6 /* opencv2.framework in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				C140743F7EC9493CB666A8D0 /* libAppCenterReactNative.a in Frameworks */,
 				D4E3E31DAE4340D78F4EC9CF /* libAppCenterReactNativeAnalytics.a in Frameworks */,
@@ -566,7 +566,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9164AC99222513ED00B38FC6 /* opencv2.framework */,
+				9164ACC12225197F00B38FC6 /* opencv2.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
@@ -1390,11 +1390,21 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 7VWG5S3W5A;
-				HEADER_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../deps/ios",
+					"$(PROJECT_DIR)/HelloSivi/Frameworks",
 					"$(inherited)",
+					"\"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS\"",
+					"\"${PODS_ROOT}/AppCenterReactNativeShared/AppCenterReactNativeShared\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../deps/ios",
+					"$(PROJECT_DIR)/HelloSivi/Frameworks",
+					"$(PROJECT_DIR)",
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = MothersLove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1416,11 +1426,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7VWG5S3W5A;
-				HEADER_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../deps/ios",
+					"$(PROJECT_DIR)/HelloSivi/Frameworks",
 					"$(inherited)",
+					"\"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS\"",
+					"\"${PODS_ROOT}/AppCenterReactNativeShared/AppCenterReactNativeShared\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../deps/ios",
+					"$(PROJECT_DIR)/HelloSivi/Frameworks",
+					"$(PROJECT_DIR)",
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = MothersLove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
