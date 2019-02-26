@@ -13,6 +13,6 @@ unzip "$APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip"
 # ls "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/x86"
 rm "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
 ln -s "$APPCENTER_SOURCE_DIRECTORY/deps/opencv/sdk/native/libs" "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
-
+ls "$APPCENTER_SOURCE_DIRECTORY/android/app/src/main/jniLibs"
 
 echo "Post clone script. Done."
