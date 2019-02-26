@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 file(GLOB motherslove_sources
-    ../../deps/djinni/support-lib/jni/*.cpp
+    ../../deps/support-lib/jni/*.cpp
     ../../generated-src/jni/*.cpp
     ../../src/cpp/*.cpp
 )
@@ -9,8 +9,8 @@ file(GLOB motherslove_sources
 
 # include directories for header files
 include_directories(
-    ../../deps/djinni/support-lib/
-    ../../deps/djinni/support-lib/jni/
+    ../../deps/support-lib/
+    ../../deps/support-lib/jni/
     ../../generated-src/cpp/
     ../../generated-src/jni/
     ../../src/cpp/

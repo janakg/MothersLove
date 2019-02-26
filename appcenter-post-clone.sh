@@ -3,7 +3,7 @@
 echo "Running post clone script..."
  
 echo "Downloading OpenCV"
-mkdir $APPCENTER_SOURCE_DIRECTORY/deps
+# mkdir $APPCENTER_SOURCE_DIRECTORY/deps
 curl -L https://s3.amazonaws.com/build.hellosivi.com/opencv.zip --output $APPCENTER_SOURCE_DIRECTORY/deps/opencv.zip
 
 

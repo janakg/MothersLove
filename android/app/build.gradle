@@ -142,7 +142,7 @@ android {
             }
             jni {
                 srcDirs = [
-                    "../../deps/djinni/support-lib/jni",
+                    "../../deps/support-lib/jni",
                     "../../generated-src/cpp",
                     "../../generated-src/jni",
                     "../../src/cpp"
